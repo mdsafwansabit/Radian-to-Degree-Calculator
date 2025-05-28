@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>রেডিয়ান ⇄ DMS ক্যালকুলেটর</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #e1f5fe, #fffde7);
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
+      flex-direction: column;
     }
     .container {
       background: #fff;
       padding: 30px;
       border-radius: 1.5rem;
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      max-width: 380px;
+      max-width: 400px;
       width: 100%;
     }
     h2 {
@@ -29,12 +33,12 @@
       margin-bottom: 20px;
     }
     .section {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     label {
       font-weight: bold;
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
     input {
       width: 100%;
@@ -43,7 +47,6 @@
       border-radius: 8px;
       margin-bottom: 10px;
       font-size: 1rem;
-      box-sizing: border-box;
     }
     .button {
       width: 100%;
@@ -54,7 +57,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin-top: 10px;
+      transition: background 0.3s ease;
     }
     .button:hover {
       background: #0097a7;
@@ -64,6 +67,28 @@
       font-weight: bold;
       color: #004d40;
       text-align: center;
+    }
+    .credit {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .credit a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    .credit a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -88,6 +113,10 @@
       <button class="button" onclick="dmsToRadian()">রেডিয়ান এ রূপান্তর</button>
       <div class="result" id="radianResult"></div>
     </div>
+  </div>
+
+  <div class="credit">
+    Created by <a href="https://www.facebook.com/safwansabit99" target="_blank">Safwan Sabit</a>
   </div>
 
   <script>
