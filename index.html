@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>রেডিয়ান ➜ ডিগ্রী ক্যালকুলেটর</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff3e0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #006064;
+    }
+    .input {
+      padding: 0.8rem;
+      width: 100%;
+      border: 2px solid #b2ebf2;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.2s ease;
+    }
+    .input:focus {
+      border-color: #00acc1;
+    }
+    .button {
+      margin-top: 1rem;
+      background: #00bcd4;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      width: 100%;
+      border-radius: 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .button:hover {
+      background: #0097a7;
+    }
+    .result {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #004d40;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>রেডিয়ান ➜ ডিগ্রী</h2>
+    <input type="number" id="radianInput" class="input" placeholder="রেডিয়ান লিখুন..." step="any">
+    <button class="button" onclick="convertToDegree()">রূপান্তর করুন</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function convertToDegree() {
+      const radian = parseFloat(document.getElementById("radianInput").value);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(radian)) {
+        resultDiv.innerText = "একটি বৈধ রেডিয়ান মান লিখুন।";
+        return;
+      }
+
+      const degree = radian * (180 / Math.PI);
+      resultDiv.innerText = `${radian} রেডিয়ান = ${degree.toFixed(4)}° ডিগ্রী`;
+    }
+  </script>
+</body>
+</html>
